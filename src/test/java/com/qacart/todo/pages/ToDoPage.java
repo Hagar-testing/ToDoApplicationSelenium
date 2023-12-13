@@ -29,7 +29,7 @@ public class ToDoPage extends BasePage {
 
     }
 
-    public void addNewToDo(){
+    public void clickOnAddNewToDoButton(){
         addNewToDoButton.click();
     }
 
@@ -41,7 +41,7 @@ public class ToDoPage extends BasePage {
         return welcomeMsg.isDisplayed();
     }
 
-    public void deleteToDo(){
+    public void clickOnDeleteToDoButton(){
         deleteToDoButton.click();
     }
 

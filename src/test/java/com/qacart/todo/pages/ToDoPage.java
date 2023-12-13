@@ -29,8 +29,9 @@ public class ToDoPage extends BasePage {
 
     }
 
-    public void clickOnAddNewToDoButton(){
+    public NewToDoPage clickOnAddNewToDoButton(){
         addNewToDoButton.click();
+        return new NewToDoPage(driver);
     }
 
     public String getNewAddedToDoText(){

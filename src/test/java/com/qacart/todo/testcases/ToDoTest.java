@@ -15,13 +15,9 @@ public class ToDoTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
-        loginPage.login("hajer.ibr@gmail.com","Qa_cart23");
-
-        ToDoPage toDoPage = new ToDoPage(driver);
-        toDoPage.clickOnAddNewToDoButton();
-
+        ToDoPage toDoPage = loginPage.login("hajer.ibr@gmail.com","Qa_cart23");
         String todoText = "to do";
-        NewToDoPage newToDoPage = new NewToDoPage(driver);
+        NewToDoPage newToDoPage = toDoPage.clickOnAddNewToDoButton();
         newToDoPage.addNewToDo(todoText);
 
         Assert.assertEquals(toDoPage.getNewAddedToDoText(), todoText);
@@ -32,16 +28,11 @@ public class ToDoTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
-        loginPage.login("hajer.ibr@gmail.com","Qa_cart23");
+        ToDoPage toDoPage = loginPage.login("hajer.ibr@gmail.com","Qa_cart23");
 
-        ToDoPage toDoPage = new ToDoPage(driver);
-        toDoPage.clickOnAddNewToDoButton();
-
+        NewToDoPage newToDoPage = toDoPage.clickOnAddNewToDoButton();
         String todoText = "to do";
-        NewToDoPage newToDoPage = new NewToDoPage(driver);
         newToDoPage.addNewToDo(todoText);
-
-
         toDoPage.clickOnDeleteToDoButton();
         Assert.assertTrue(toDoPage.isNoToDosPlaceholderTextIsDisplayed());
     }

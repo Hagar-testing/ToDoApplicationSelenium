@@ -13,9 +13,7 @@ public class LoginTest extends BaseTest {
 
         LoginPage loginPage = new LoginPage(driver);
         loginPage.load();
-        loginPage.login("hajer.ibr@gmail.com","Qa_cart23");
-
-        ToDoPage toDoPage = new  ToDoPage(driver);
+        ToDoPage toDoPage = loginPage.login("hajer.ibr@gmail.com","Qa_cart23");
 
 
         boolean isWelcomeDisplayed = toDoPage.isWelcomeMsgDisplayed();

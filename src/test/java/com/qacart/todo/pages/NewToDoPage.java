@@ -20,8 +20,9 @@ public class NewToDoPage extends BasePage {
     }
 
 
-    public void addNewToDo(String todoText){
+    public ToDoPage addNewToDo(String todoText){
         newToDoInput.sendKeys(todoText);
         submitNewTaskButton.click();
+        return new ToDoPage(driver);
     }
 }

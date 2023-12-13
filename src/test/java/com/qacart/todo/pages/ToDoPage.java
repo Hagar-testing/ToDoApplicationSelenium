@@ -42,8 +42,9 @@ public class ToDoPage extends BasePage {
         return welcomeMsg.isDisplayed();
     }
 
-    public void clickOnDeleteToDoButton(){
+    public ToDoPage clickOnDeleteToDoButton(){
         deleteToDoButton.click();
+        return this;
     }
 
     public boolean isNoToDosPlaceholderTextIsDisplayed(){

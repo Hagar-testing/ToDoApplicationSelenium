@@ -20,7 +20,9 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-
+    public void load(){
+        driver.get("http://qacart-todo.herokuapp.com/");
+    }
     public void login(String email, String password){
         emailInput.sendKeys(email);
         passwordInput.sendKeys(password);

@@ -11,8 +11,8 @@ public class LoginTest extends BaseTest {
     @Test
     public void shouldBeAbleToLoginWithEmailAndPassword() {
 
-        driver.get("http://qacart-todo.herokuapp.com/");
         LoginPage loginPage = new LoginPage(driver);
+        loginPage.load();
         loginPage.login("hajer.ibr@gmail.com","Qa_cart23");
 
         ToDoPage toDoPage = new  ToDoPage(driver);

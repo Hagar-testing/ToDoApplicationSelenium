@@ -13,8 +13,8 @@ public class ToDoTest extends BaseTest {
     @Test
     public void shouldBeAbleToAddNewToDo(){
 
-        driver.get("http://qacart-todo.herokuapp.com/");
         LoginPage loginPage = new LoginPage(driver);
+        loginPage.load();
         loginPage.login("hajer.ibr@gmail.com","Qa_cart23");
 
         ToDoPage toDoPage = new ToDoPage(driver);
@@ -30,8 +30,8 @@ public class ToDoTest extends BaseTest {
     @Test
     public void shouldBeAbleToDeleteToDo(){
 
-        driver.get("http://qacart-todo.herokuapp.com/");
         LoginPage loginPage = new LoginPage(driver);
+        loginPage.load();
         loginPage.login("hajer.ibr@gmail.com","Qa_cart23");
 
         ToDoPage toDoPage = new ToDoPage(driver);

@@ -1,11 +1,11 @@
 package com.qacart.todo.pages;
 
+import com.qacart.todo.base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class ToDoPage {
+public class ToDoPage extends BasePage {
 
     @FindBy(css = "[data-testid='add']")
     private WebElement addNewToDoButton;
@@ -25,7 +25,8 @@ public class ToDoPage {
 
 
     public ToDoPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+        super(driver);
+
     }
 
     public void addNewToDo(){

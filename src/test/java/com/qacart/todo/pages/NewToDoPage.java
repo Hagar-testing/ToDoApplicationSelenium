@@ -1,12 +1,11 @@
 package com.qacart.todo.pages;
 
-import org.openqa.selenium.By;
+import com.qacart.todo.base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class NewToDoPage {
+public class NewToDoPage extends BasePage {
 
 
     @FindBy(css = "[data-testid='new-todo']")
@@ -17,7 +16,7 @@ public class NewToDoPage {
 
 
     public NewToDoPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
 

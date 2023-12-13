@@ -1,12 +1,11 @@
 package com.qacart.todo.pages;
 
-import org.openqa.selenium.By;
+import com.qacart.todo.base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
     @FindBy(id = "email")
     private WebElement emailInput;
@@ -18,7 +17,7 @@ public class LoginPage {
     private WebElement submitButton;
 
     public LoginPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
 

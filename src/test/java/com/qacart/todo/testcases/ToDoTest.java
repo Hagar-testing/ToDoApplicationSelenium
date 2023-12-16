@@ -4,6 +4,7 @@ import com.qacart.todo.base.BaseTest;
 import com.qacart.todo.pages.LoginPage;
 import com.qacart.todo.pages.NewToDoPage;
 import com.qacart.todo.pages.ToDoPage;
+import com.qacart.todo.utils.ConfigUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,7 +17,7 @@ public class ToDoTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         String newAddedToDoText = loginPage
                 .load()
-                .login("hajer.ibr@gmail.com","Qa_cart23")
+                .login(ConfigUtils.getEmail(),ConfigUtils.getPassword())
                 .clickOnAddNewToDoButton()
                 .addNewToDo(todoText)
                 .getNewAddedToDoText();

@@ -17,4 +17,15 @@ public class ConfigUtils {
         String urlFromSys = System.getProperty(BASE_URL);
         return urlFromSys != null ? urlFromSys : properties.getProperty(BASE_URL);
     }
+
+    public static String getEmail(){
+        String mailFromSys = System.getProperty(EMAIL);
+        return mailFromSys != null ? mailFromSys : properties.getProperty(EMAIL);
+    }
+
+    public static String getPassword(){
+        String passFromSys = System.getProperty(PASSWORD);
+        return passFromSys != null ? passFromSys : properties.getProperty(PASSWORD);
+    }
+
 }

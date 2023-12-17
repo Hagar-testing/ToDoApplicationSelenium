@@ -2,15 +2,15 @@ package com.qacart.todo.api;
 
 import com.qacart.todo.objects.User;
 import com.qacart.todo.utils.UserUtils;
-import io.restassured.http.Cookies;
+import io.restassured.http.Cookie;
 import io.restassured.response.Response;
-
+import java.util.List;
 import static io.restassured.RestAssured.given;
 
 public class RegisterAPI {
 
 
-    private Cookies restAssuredCookies;
+    private List<Cookie> restAssuredCookies;
     private String accessToken;
     private String userId;
     private String firstName;
@@ -28,7 +28,7 @@ public class RegisterAPI {
         return userId;
     }
 
-    public Cookies getRestAssuredCookies() {
+    public List<Cookie> getRestAssuredCookies() {
         return restAssuredCookies;
     }
 
@@ -51,7 +51,7 @@ public class RegisterAPI {
         if(response.statusCode() != 201){
             throw new RuntimeException("Something went wrong");
         }
-        restAssuredCookies = response.detailedCookies();
+        restAssuredCookies = response.detailedCookies().asList();
         accessToken = response.path("access_token");
         userId = response.path("userID");
         firstName = response.path("firstName");

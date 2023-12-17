@@ -1,5 +1,6 @@
 package com.qacart.todo.testcases;
 
+import com.qacart.todo.api.RegisterAPI;
 import com.qacart.todo.base.BaseTest;
 import com.qacart.todo.pages.LoginPage;
 import com.qacart.todo.pages.NewToDoPage;
@@ -13,14 +14,22 @@ public class ToDoTest extends BaseTest {
 
     @Test
     public void shouldBeAbleToAddNewToDo(){
+
+        RegisterAPI registerAPI = new RegisterAPI();
+        registerAPI.register();
+
+        ToDoPage toDoPage = new ToDoPage(driver);
+        toDoPage.load();
+        injectCookiesToBrowser(registerAPI.getRestAssuredCookies());
+
         String todoText = "to do";
-        LoginPage loginPage = new LoginPage(driver);
-        String newAddedToDoText = loginPage
+
+        String newAddedToDoText = toDoPage
                 .load()
-                .login(ConfigUtils.getEmail(),ConfigUtils.getPassword())
                 .clickOnAddNewToDoButton()
                 .addNewToDo(todoText)
                 .getNewAddedToDoText();
+
         Assert.assertEquals(newAddedToDoText, todoText);
     }
 

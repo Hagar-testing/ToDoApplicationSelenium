@@ -4,7 +4,9 @@ import com.qacart.todo.objects.User;
 import com.qacart.todo.utils.UserUtils;
 import io.restassured.http.Cookie;
 import io.restassured.response.Response;
+
 import java.util.List;
+
 import static io.restassured.RestAssured.given;
 
 public class RegisterAPI {

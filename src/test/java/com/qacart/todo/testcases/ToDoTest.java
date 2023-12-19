@@ -35,12 +35,18 @@ public class ToDoTest extends BaseTest {
 
     @Test
     public void shouldBeAbleToDeleteToDo(){
+
+        RegisterAPI registerAPI = new RegisterAPI();
+        registerAPI.register();
+
+        NewToDoPage newToDoPage = new NewToDoPage(driver);
+        newToDoPage.load();
+        injectCookiesToBrowser(registerAPI.getRestAssuredCookies());
+
+
         String todoText = "to do";
-        LoginPage loginPage = new LoginPage(driver);
-        Boolean isNoToDosPlaceholderTextIsDisplayed = loginPage
+        boolean isNoToDosPlaceholderTextIsDisplayed = newToDoPage
                 .load()
-                .login("hajer.ibr@gmail.com","Qa_cart23")
-                .clickOnAddNewToDoButton()
                 .addNewToDo(todoText)
                 .clickOnDeleteToDoButton()
                 .isNoToDosPlaceholderTextIsDisplayed();

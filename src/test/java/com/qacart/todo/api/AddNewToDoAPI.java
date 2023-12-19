@@ -2,6 +2,8 @@ package com.qacart.todo.api;
 
 import com.qacart.todo.objects.Task;
 import io.restassured.response.Response;
+
+import static com.qacart.todo.constants.EndPoints.ADD_NEW_TODO_API;
 import static io.restassured.RestAssured.given;
 
 public class AddNewToDoAPI {
@@ -19,7 +21,7 @@ public class AddNewToDoAPI {
                         .auth().oauth2(token)
                         .log().all()
                         .when()
-                        .post("api/v1/tasks")
+                        .post(ADD_NEW_TODO_API)
                         .then()
                         .log().all()
                         .extract().response();

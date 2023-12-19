@@ -7,6 +7,7 @@ import io.restassured.response.Response;
 
 import java.util.List;
 
+import static com.qacart.todo.constants.EndPoints.REGISTER_API;
 import static io.restassured.RestAssured.given;
 
 public class RegisterAPI {
@@ -45,7 +46,7 @@ public class RegisterAPI {
                     .body(user)
                     .log().all()
                 .when()
-                    .post("api/v1/users/register")
+                    .post(REGISTER_API)
                 .then()
                     .log().all()
                     .extract().response();

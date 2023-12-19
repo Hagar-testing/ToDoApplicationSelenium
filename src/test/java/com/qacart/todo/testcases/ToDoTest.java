@@ -1,5 +1,6 @@
 package com.qacart.todo.testcases;
 
+import com.qacart.todo.api.AddNewToDoAPI;
 import com.qacart.todo.api.RegisterAPI;
 import com.qacart.todo.base.BaseTest;
 import com.qacart.todo.pages.NewToDoPage;
@@ -33,19 +34,23 @@ public class ToDoTest extends BaseTest {
 
     @Test
     public void shouldBeAbleToDeleteToDo(){
+        String todoText = "to do";
 
         RegisterAPI registerAPI = new RegisterAPI();
         registerAPI.register();
 
-        NewToDoPage newToDoPage = new NewToDoPage(driver);
-        newToDoPage.load();
+        AddNewToDoAPI addNewToDoAPI = new AddNewToDoAPI();
+        addNewToDoAPI.addNewToTo(todoText, registerAPI.getAccessToken());
+
+
+        ToDoPage toDoPage = new ToDoPage(driver);
+        toDoPage.load();
         injectCookiesToBrowser(registerAPI.getRestAssuredCookies());
 
 
-        String todoText = "to do";
-        boolean isNoToDosPlaceholderTextIsDisplayed = newToDoPage
+
+        boolean isNoToDosPlaceholderTextIsDisplayed = toDoPage
                 .load()
-                .addNewToDo(todoText)
                 .clickOnDeleteToDoButton()
                 .isNoToDosPlaceholderTextIsDisplayed();
         Assert.assertTrue(isNoToDosPlaceholderTextIsDisplayed);

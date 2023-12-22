@@ -5,12 +5,17 @@ import com.qacart.todo.api.RegisterAPI;
 import com.qacart.todo.base.BaseTest;
 import com.qacart.todo.pages.NewToDoPage;
 import com.qacart.todo.pages.ToDoPage;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+@Feature("Todo Feature")
 
 public class ToDoTest extends BaseTest {
 
 
+    @Story("Add Todo")
     @Test(description = "Should be able to add new to do correctly")
     public void shouldBeAbleToAddNewToDo(){
 
@@ -32,6 +37,7 @@ public class ToDoTest extends BaseTest {
         Assert.assertEquals(newAddedToDoText, todoText);
     }
 
+    @Story("Delete Todo")
     @Test(description = "Should be able to delete todo correctly")
     public void shouldBeAbleToDeleteToDo(){
         String todoText = "to do";

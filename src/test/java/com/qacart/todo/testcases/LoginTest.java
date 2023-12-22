@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
 
-    @Test
+    @Test(description = "Test login functionality using email and password")
     public void shouldBeAbleToLoginWithEmailAndPassword() {
         LoginPage loginPage = new LoginPage(getDriver());
         boolean isWelcomeDisplayed = loginPage

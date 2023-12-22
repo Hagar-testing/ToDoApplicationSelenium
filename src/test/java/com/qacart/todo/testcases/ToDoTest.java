@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class ToDoTest extends BaseTest {
 
 
-    @Test
+    @Test(description = "Should be able to add new to do correctly")
     public void shouldBeAbleToAddNewToDo(){
 
         RegisterAPI registerAPI = new RegisterAPI();
@@ -32,7 +32,7 @@ public class ToDoTest extends BaseTest {
         Assert.assertEquals(newAddedToDoText, todoText);
     }
 
-    @Test
+    @Test(description = "Should be able to delete todo correctly")
     public void shouldBeAbleToDeleteToDo(){
         String todoText = "to do";
 

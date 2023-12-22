@@ -3,6 +3,7 @@ package com.qacart.todo.base;
 import com.qacart.todo.factory.DriverFactory;
 import com.qacart.todo.utils.CookieUtils;
 import io.qameta.allure.Allure;
+import io.qameta.allure.Step;
 import io.restassured.http.Cookie;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -45,6 +46,7 @@ public class BaseTest {
         getDriver().quit();
     }
 
+    @Step
     public void injectCookiesToBrowser(List<Cookie> restAssuredCookies){
 
         List<org.openqa.selenium.Cookie> seleniumCookies = CookieUtils.convertRestAssuredCookiesToSeleniumCookies(restAssuredCookies);

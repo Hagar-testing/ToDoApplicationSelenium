@@ -19,7 +19,7 @@ public class ToDoTest extends BaseTest {
     @Story("Add Todo")
     @Description("It will be add new to do to the todos list")
     @Test(description = "Should be able to add new to do correctly")
-    public void shouldBeAbleToAddNewToDo(){
+    public void shouldBeAbleToAddNewToDo() {
 
         RegisterAPI registerAPI = new RegisterAPI();
         registerAPI.register();
@@ -42,7 +42,7 @@ public class ToDoTest extends BaseTest {
     @Story("Delete Todo")
     @Description("It will be delete the todos list")
     @Test(description = "Should be able to delete todo correctly")
-    public void shouldBeAbleToDeleteToDo(){
+    public void shouldBeAbleToDeleteToDo() {
         String todoText = "to do";
 
         RegisterAPI registerAPI = new RegisterAPI();
@@ -57,14 +57,12 @@ public class ToDoTest extends BaseTest {
         injectCookiesToBrowser(registerAPI.getRestAssuredCookies());
 
 
-
         boolean isNoToDosPlaceholderTextIsDisplayed = toDoPage
                 .load()
                 .clickOnDeleteToDoButton()
                 .isNoToDosPlaceholderTextIsDisplayed();
         Assert.assertTrue(isNoToDosPlaceholderTextIsDisplayed);
     }
-
 
 
 }

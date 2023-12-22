@@ -2,6 +2,7 @@ package com.qacart.todo.pages;
 
 import com.qacart.todo.base.BasePage;
 import com.qacart.todo.utils.ConfigUtils;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,13 +23,14 @@ public class NewToDoPage extends BasePage {
         super(driver);
     }
 
-    public NewToDoPage load(){
+    @Step
+    public NewToDoPage load() {
         driver.get(ConfigUtils.getBaseUrl() + NEW_TODO_PAGE_PATH);
         return this;
     }
 
-
-    public ToDoPage addNewToDo(String todoText){
+    @Step
+    public ToDoPage addNewToDo(String todoText) {
         newToDoInput.sendKeys(todoText);
         submitNewTaskButton.click();
         return new ToDoPage(driver);

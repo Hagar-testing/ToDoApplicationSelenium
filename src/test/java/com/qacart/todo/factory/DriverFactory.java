@@ -12,7 +12,7 @@ import static com.qacart.todo.constants.ConfigConstants.*;
 
 public class DriverFactory {
 
-    public WebDriver initializeDriver(){
+    public WebDriver initializeDriver() {
         String browser = System.getProperty(BROWSER, CHROME);
         WebDriver driver;
         switch (browser) {
@@ -35,6 +35,4 @@ public class DriverFactory {
         driver.manage().window().maximize();
         return driver;
     }
-
-
 }

@@ -2,6 +2,7 @@ package com.qacart.todo.pages;
 
 import com.qacart.todo.base.BasePage;
 import com.qacart.todo.utils.ConfigUtils;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,30 +33,36 @@ public class ToDoPage extends BasePage {
 
     }
 
-    public ToDoPage load(){
+    @Step
+    public ToDoPage load() {
         driver.get(ConfigUtils.getBaseUrl() + TODO_PAGE_PATH);
         return this;
     }
 
-    public NewToDoPage clickOnAddNewToDoButton(){
+    @Step
+    public NewToDoPage clickOnAddNewToDoButton() {
         addNewToDoButton.click();
         return new NewToDoPage(driver);
     }
 
-    public String getNewAddedToDoText(){
+    @Step
+    public String getNewAddedToDoText() {
         return toDoTextElement.getText();
     }
 
-    public Boolean isWelcomeMsgDisplayed(){
+    @Step
+    public Boolean isWelcomeMsgDisplayed() {
         return welcomeMsg.isDisplayed();
     }
 
-    public ToDoPage clickOnDeleteToDoButton(){
+    @Step
+    public ToDoPage clickOnDeleteToDoButton() {
         deleteToDoButton.click();
         return this;
     }
 
-    public boolean isNoToDosPlaceholderTextIsDisplayed(){
+    @Step
+    public boolean isNoToDosPlaceholderTextIsDisplayed() {
         return noDoTosPlaceholderText.isDisplayed();
     }
 

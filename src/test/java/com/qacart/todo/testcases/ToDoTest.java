@@ -17,7 +17,7 @@ public class ToDoTest extends BaseTest {
         RegisterAPI registerAPI = new RegisterAPI();
         registerAPI.register();
 
-        ToDoPage toDoPage = new ToDoPage(driver);
+        ToDoPage toDoPage = new ToDoPage(getDriver());
         toDoPage.load();
         injectCookiesToBrowser(registerAPI.getRestAssuredCookies());
 
@@ -43,7 +43,7 @@ public class ToDoTest extends BaseTest {
         addNewToDoAPI.addNewToTo(todoText, registerAPI.getAccessToken());
 
 
-        ToDoPage toDoPage = new ToDoPage(driver);
+        ToDoPage toDoPage = new ToDoPage(getDriver());
         toDoPage.load();
         injectCookiesToBrowser(registerAPI.getRestAssuredCookies());
 

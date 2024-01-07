@@ -3,17 +3,21 @@ package com.qacart.todo.objects;
 public class User {
     private String firstName;
     private String lastName;
-    private String password;
     private String email;
+    private String password;
 
-
-    public User(String firstName, String lastName, String password, String email) {
+    public User(
+                String firstName,
+                String lastName,
+                String email,
+                String password) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.password = password;
         this.email = email;
+        this.password = password;
     }
 
+    // Getter and Setter methods for firstName
     public String getFirstName() {
         return firstName;
     }
@@ -22,6 +26,7 @@ public class User {
         this.firstName = firstName;
     }
 
+    // Getter and Setter methods for lastName
     public String getLastName() {
         return lastName;
     }
@@ -30,6 +35,16 @@ public class User {
         this.lastName = lastName;
     }
 
+    // Getter and Setter methods for userEmail
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    // Getter and Setter methods for userPassword
     public String getPassword() {
         return password;
     }
@@ -38,11 +53,5 @@ public class User {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }

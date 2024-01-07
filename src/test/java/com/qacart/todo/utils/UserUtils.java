@@ -5,12 +5,20 @@ import com.qacart.todo.objects.User;
 
 public class UserUtils {
 
-    public static User generateRandomUser(){
-        String firstName = new Faker().name().firstName();
-        String lastName = new Faker().name().lastName();
-        String email = new Faker().internet().emailAddress();
-        String password = new Faker().internet().password();
+    public static User generateRandomUser() {
 
-        return new User(firstName,lastName,password,email);
+        Faker faker = new Faker();
+
+        // Generate fake user data
+        String firstName = faker.name().firstName();
+        String lastName = faker.name().lastName();
+        String userEmail = faker.internet().emailAddress();
+        String userPassword = faker.internet().password();
+
+        return new User(
+                firstName,
+                lastName,
+                userEmail,
+                userPassword);
     }
 }

@@ -1,6 +1,7 @@
 package com.qacart.todo.api;
 
 import com.qacart.todo.objects.Task;
+import com.qacart.todo.utils.ConfigUtils;
 import io.restassured.response.Response;
 
 import static com.qacart.todo.constants.EndPoints.ADD_NEW_TODO_API;
@@ -15,7 +16,7 @@ public class AddNewToDoAPI {
 
         Response response =
                 given()
-                        .baseUri("http://qacart-todo.herokuapp.com/")
+                        .baseUri(ConfigUtils.getBaseUrl())
                         .header("Content-Type", "application/json")
                         .body(body)
                         .auth().oauth2(token)

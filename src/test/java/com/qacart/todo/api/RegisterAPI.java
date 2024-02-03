@@ -41,7 +41,7 @@ public class RegisterAPI {
 
         Response response =
                 given()
-                    .baseUri("http://qacart-todo.herokuapp.com/")
+                    .baseUri(ConfigUtils.getBaseUrl())
                     .header("Content-Type", "application/json")
                     .body(user)
                     .log().all()

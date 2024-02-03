@@ -1,5 +1,6 @@
 package com.qacart.todo.testcases;
 
+import com.qacart.todo.api.RegisterAPI;
 import com.qacart.todo.base.BaseTest;
 import com.qacart.todo.pages.LoginPage;
 import com.qacart.todo.utils.ConfigUtils;
@@ -16,10 +17,13 @@ public class LoginTest extends BaseTest {
     @Description("It will be login by filling the email and the password and navigate to the todo page")
     @Test(description = "Test login functionality using email and password")
     public void shouldBeAbleToLoginWithEmailAndPassword() {
+        RegisterAPI registerAPI = new RegisterAPI();
+        registerAPI.register();
+
         LoginPage loginPage = new LoginPage(getDriver());
         boolean isWelcomeDisplayed = loginPage
                 .load()
-                .login(ConfigUtils.getEmail(),ConfigUtils.getPassword())
+                .login(registerAPI.getEmail(), registerAPI.getPassword())
                 .isWelcomeMsgDisplayed();
         Assert.assertTrue(isWelcomeDisplayed);
     }

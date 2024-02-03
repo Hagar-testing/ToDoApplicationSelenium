@@ -1,6 +1,7 @@
 package com.qacart.todo.api;
 
 import com.qacart.todo.objects.User;
+import com.qacart.todo.utils.ConfigUtils;
 import com.qacart.todo.utils.UserUtils;
 import io.restassured.http.Cookie;
 import io.restassured.response.Response;
@@ -18,6 +19,25 @@ public class RegisterAPI {
     private String userId;
     private String firstName;
 
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    private String password;
 
     public String getFirstName() {
         return firstName;
@@ -58,6 +78,8 @@ public class RegisterAPI {
         accessToken = response.path("access_token");
         userId = response.path("userID");
         firstName = response.path("firstName");
+        email = user.getEmail();
+        password = user.getPassword();
 
 
     }

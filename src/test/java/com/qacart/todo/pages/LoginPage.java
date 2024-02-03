@@ -7,16 +7,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static com.qacart.todo.constants.LocatorsConstant.*;
+
 
 public class LoginPage extends BasePage {
 
-    @FindBy(id = "email")
+    @FindBy(id = EMAIL_INPUT)
     private WebElement emailInput;
 
-    @FindBy(id = "password")
+    @FindBy(id = PASSWORD_INPUT)
     private WebElement passwordInput;
 
-    @FindBy(id = "submit")
+    @FindBy(id = SUBMIT_BUTTON)
     private WebElement submitButton;
 
     public LoginPage(WebDriver driver) {

@@ -1,6 +1,6 @@
 package com.qacart.todo.constants;
 
-public class EndPoints {
+public class ApiPathsConstants {
 
     public static final String REGISTER_API = "api/v1/users/register";
 

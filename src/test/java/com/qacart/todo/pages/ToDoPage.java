@@ -6,25 +6,24 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import static com.qacart.todo.constants.PagePaths.TODO_PAGE_PATH;
+import static com.qacart.todo.constants.LocatorsConstant.*;
+import static com.qacart.todo.constants.PagePathsConstant.TODO_PAGE_PATH;
 
 public class ToDoPage extends BasePage {
 
-    @FindBy(css = "[data-testid='add']")
+    @FindBy(css = ADD_NEW_TODO_BUTTON)
     private WebElement addNewToDoButton;
 
-    @FindBy(css = "[data-testid='todo-text']")
+    @FindBy(css = TODO_TEXT_ELEMENT)
     private WebElement toDoTextElement;
 
-    @FindBy(css = "[data-testid='welcome']")
+    @FindBy(css = WELCOME_MSG)
     private WebElement welcomeMsg;
 
-
-    @FindBy(css = "[data-testid='delete']")
+    @FindBy(css = DELETE_TODO_BUTTON)
     private WebElement deleteToDoButton;
 
-    @FindBy(css = "[data-testid='no-todos']")
+    @FindBy(css = NO_TODOS_PLACEHOLDER_TEXT)
     private WebElement noDoTosPlaceholderText;
 
 

@@ -8,7 +8,8 @@ import io.restassured.response.Response;
 
 import java.util.List;
 
-import static com.qacart.todo.constants.EndPoints.REGISTER_API;
+import static com.qacart.todo.constants.ApiPathsConstants.REGISTER_API;
+import static com.qacart.todo.constants.ApiResponseConstants.*;
 import static io.restassured.RestAssured.given;
 
 public class RegisterAPI {
@@ -75,9 +76,9 @@ public class RegisterAPI {
             throw new RuntimeException("Something went wrong");
         }
         restAssuredCookies = response.detailedCookies().asList();
-        accessToken = response.path("access_token");
-        userId = response.path("userID");
-        firstName = response.path("firstName");
+        accessToken = response.path(ACCESS_TOKEN);
+        userId = response.path(USER_ID);
+        firstName = response.path(FIRST_NAME);
         email = user.getEmail();
         password = user.getPassword();
 

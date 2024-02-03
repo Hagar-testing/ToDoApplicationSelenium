@@ -4,7 +4,7 @@ import com.qacart.todo.objects.Task;
 import com.qacart.todo.utils.ConfigUtils;
 import io.restassured.response.Response;
 
-import static com.qacart.todo.constants.EndPoints.ADD_NEW_TODO_API;
+import static com.qacart.todo.constants.ApiPathsConstants.ADD_NEW_TODO_API;
 import static io.restassured.RestAssured.given;
 
 public class AddNewToDoAPI {
